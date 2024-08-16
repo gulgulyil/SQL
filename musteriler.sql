@@ -26,3 +26,29 @@ VALUES
 (17, 'Gul', 'Akyuz', '555444346', 'gul@example.com', 'Bursa, Turkiye', '1993-08-20', datetime('NOW'), TRUE, 'K', 31);
 
 SELECT * FROM musteriler1;
+
+UPDATE musteriler1
+SET adres = 'Malatya, Turkiye'
+WHERE adres = 'Istanbul, Turkiye';
+
+SELECT * FROM musteriler1;
+
+UPDATE musteriler1 
+SET yas = 33
+WHERE adi = 'Ahmet';
+
+SELECT * FROM musteriler1;
+
+UPDATE musteriler1 
+SET telefon = '76578971234'
+WHERE adi = 'Ali' AND soyadi = 'Demir';
+
+SELECT * FROM musteriler1;
+
+DELETE FROM musteriler1 
+WHERE adi = 'Ayse';
+
+SELECT * FROM musteriler1;
+
+
+
