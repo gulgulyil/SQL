@@ -50,5 +50,49 @@ WHERE adi = 'Ayse';
 
 SELECT * FROM musteriler1;
 
+SELECT adi, soyadi FROM musteriler;
+
+SELECT * FROM musteriler WHERE telefon = '555444334';
+
+UPDATE musteriler1 
+SET aktif = FALSE 
+WHERE adi = 'Gul';
+
+SELECT * FROM musteriler1;
+
+SELECT * FROM musteriler1 WHERE aktif = TRUE;
+
+SELECT * FROM musteriler1 WHERE yas>30;
+
+-- E-posta adresi '@example.com' ile biten musterileri sec
+SELECT * FROM musteriler1 WHERE eposta LIKE '%@example.com';
+
+--ORDER BY ile siralama
+  --Yasa gore kucukten buyuge siralama
+
+SELECT * FROM musteriler1 ORDER BY yas;
+
+--Yasa gore buyukten kucuge sirala
+SELECT * FROM musteriler1 ORDER BY yas DESC;
+
+--Soyada gore sirala
+SELECT * FROM musteriler1 ORDER BY soyadi;
+
+--Uye olma tarihine gore en yeni 5 musteriyi getir.
+SELECT * FROM musteriler1 ORDER BY uye_olma_tarihi DESC LIMIT 5;
+
+
+--GROUP BY
+  --Sehirlerre gore musteri sayisini bulma
+SELECT adres, COUNT(*) AS musteri_sayisi
+FROM musteriler1 
+GROUP BY adres;
+
+--Cinsiyete gore musteri saysisni bulma
+SELECT cinsiyet, COUNT(*) AS musteri_sayisi 
+FROM musteriler1 
+GROUP BY cinsiyet;
+
+
 
 
