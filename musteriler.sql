@@ -93,6 +93,14 @@ SELECT cinsiyet, COUNT(*) AS musteri_sayisi
 FROM musteriler1 
 GROUP BY cinsiyet;
 
+--Musterilerin toplam yasini bulalim
+SELECT SUM (yas) AS toplam_yas
+FROM musteriler;
+
+--Musterilerin toplam yasini bulalim
+SELECT AVG(yas) AS ortalama_yas
+FROM musteriler;
+
 
 
 
