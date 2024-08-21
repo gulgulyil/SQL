@@ -36,3 +36,17 @@ VALUES
 
 
 SELECT * from Urunlerim;
+
+SELECT * from Urunlerim;
+
+--Fiyati 500.000 den yuksek olan urunleri listeleme
+SELECT * FROM Urunlerim WHERE fiyat> 500.00;
+
+--Kategorisi "Elektronik" olan ve stok miktari 50'den fazla olan urunlerin adini, fiyatini ve stok miktarini listeleme:
+SELECT ad, fiyat, stok_miktari FROM Urunlerim WHERE kategori = 'Elektronik' AND stok_miktari>50;
+
+--Agirlik degeri 0.1 ile 0.5 arasinda olan urunlerin adini, agirlik degerini ve eklenme tarihini listeleme
+SELECT ad, agirlik, eklenme_tarihi FROM Urunlerim WHERE agirlik BETWEEN 0.1 AND 0.5;
+
+--Renkleri 'Siyah' olan veya ureticisi 'TechMaster' olan urunlerin tum bilgilerini listeleme:
+SELECT * FROM Urunlerim WHERE renk='Siyah' OR uretici= 'TechMaster';
