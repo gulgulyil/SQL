@@ -74,3 +74,10 @@ WHERE kategori = 'Elektronik';
 DELETE FROM Urunlerim WHERE ad='Gaming Mouse';
 
 SELECT * FROM Urunlerim;
+
+--Toplam urun sayisi:
+SELECT COUNT(*) AS toplam_urun_sayisi FROM urunlerim;
+
+--Stok miktari 50'den fazla olan urunlerin sayisi:
+SELECT COUNT(*) AS stok_urun_50den_fazla_urunsayisi 
+FROM Urunlerim WHERE stok_miktari>50;
