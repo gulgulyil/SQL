@@ -84,6 +84,62 @@ FROM Products;
 SELECT MIN(Salary) AS En_dusuk_maas
 FROM Employees;
 
+--En yuksek fiyatli urunu bulalim.
+SELECT MAX(Price) AS EnYuksekMaas
+FROM Products;
+
+--Belirli bir araliktaki yas araligindaki calisanlari secelim.
+SELECT * FROM Employees
+WHERE Age BETWEEN 25 AND 35;
+
+--Belirli bir kelime ile baslayan calisan adlarini secelim.
+SELECT * FROM Employees
+WHERE FullName LIKE 'A%';
+--LIKE operatoru, bir sutunda belirli bir metin desenine uyan verileri secmek icin kullanilir. Bu operator, genellikle WHERE ifadesi icinde kullanilir.
+
+
+--Belirli departmanlara sahip calisanlari secelim
+SELECT * FROM Employees
+WHERE Department IN ('IT', 'Pazarlama');
+
+--Urun aciklamasi belirtilmemis urunleri secelim
+SELECT * FROM Products
+WHERE ProductDescription IS NULL;
+
+--Urun aciklamasi belirtilmis urunleri secelim
+SELECT * FROM Products
+WHERE ProductDescription IS NOT NULL;
+
+--Benzersiz depertman isimlerini secelim 
+SELECT DISTINCT Department,
+FROM Employees;
+
+--Calisanlar ve urunler tablolarini birlestirerek bilgileri secelim
+SELECT Employees.FullName, Products.ProductName
+FROM Employees
+INNER JOIN Products ON Employees.EmployeeJoinKey = Products.ProductJoinKey;
+
+
+--Calisan maaslarini artiralim
+UPDATE Employees
+SET Salary = Salary*1.1
+WHERE Age>30;
+
+SELECT * FROM Employees;
+
+--Belirli depertmana ait calisanlari silelim.
+DELETE FROM Employees
+WHERE department= 'HR';
+
+--yeni bir urun ekleyelim
+INSERT INTO Products(ProductName, Category, Price, StockQuantity, Supplier)
+VALUES
+('Smartphone', 'Elektronik', 599.99,100,'TechCorp');
+
+SELECT * FROM Products;
+
+
+
 --En yiksek fiyatli urunu bulalim.
 SELECT MAX(Price) AS EnYuksekMaas
 FROM Products;
