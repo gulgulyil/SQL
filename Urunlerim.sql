@@ -50,3 +50,27 @@ SELECT ad, agirlik, eklenme_tarihi FROM Urunlerim WHERE agirlik BETWEEN 0.1 AND 
 
 --Renkleri 'Siyah' olan veya ureticisi 'TechMaster' olan urunlerin tum bilgilerini listeleme:
 SELECT * FROM Urunlerim WHERE renk='Siyah' OR uretici= 'TechMaster';
+
+SELECT * from Urunlerim;
+
+-- En yuksek puanli urunleri (skor degeri en yuksek olanlari) listeleme:
+SELECT * FROM Urunlerim ORDER BY skor DESC LIMIT 5;
+
+-- "Aksesuarlar" kategorisine ait urunlerin stok miktarini 20 arttirma:
+UPDATE Urunlerim
+SET stok_miktari = stok_miktari + 20
+WHERE kategori= 'Aksesuarlar';
+
+SELECT * FROM Urunlerim;
+
+--'Elektronik' kategorisine ait urunlerin ortalama indirim oranini bulma:
+SELECT AVG(indirim_orani)AS ortalama_indirim_orani
+FROM Urunlerim
+WHERE kategori = 'Elektronik';
+
+-- 'DROP' sildigin zaman geri alamiyorsun DIKKATLI kullanmak gerek
+
+--Silme islemi icin
+DELETE FROM Urunlerim WHERE ad='Gaming Mouse';
+
+SELECT * FROM Urunlerim;
